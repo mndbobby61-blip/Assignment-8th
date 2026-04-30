@@ -11,11 +11,11 @@ export default function HomePage() {
   return (
     <div className="bg-gray-100">
 
-      {/* 🔥 HERO + SIDEBAR */}
+      {/* HERO + SIDEBAR */}
       <section className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4">
 
-        {/* 🧭 Sidebar */}
-        <div className="bg-white rounded-xl shadow p-4 space-y-3">
+        {/* Sidebar */}
+        {/* <div className="bg-white rounded-xl shadow p-4 space-y-3">
           <h2 className="font-bold text-lg mb-2">Categories</h2>
           {["Electronics", "Fashion", "Shoes", "Bags", "Watches"].map((cat) => (
             <p
@@ -25,10 +25,10 @@ export default function HomePage() {
               {cat}
             </p>
           ))}
-        </div>
+        </div> */}
 
-        {/* 🎯 Hero Banner */}
-        <div className="md:col-span-2 relative bg-gradient-to-r from-yellow-200 via-orange-100 to-yellow-300 rounded-xl py-16 overflow-hidden text-center">
+        {/* Hero Banner */}
+        <div className="md:col-span-4 relative bg-gradient-to-r from-yellow-200 via-orange-100 to-yellow-300 rounded-xl py-16 overflow-hidden text-center">
 
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,165,0,0.3),transparent)] animate-pulse"></div>
 
@@ -57,8 +57,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* 🎁 Promo Cards */}
-        <div className="space-y-4">
+        {/* Promo Cards */}
+        {/* <div className="space-y-4">
           <div className="bg-white rounded-xl p-4 shadow hover:shadow-lg transition">
             <h3 className="font-semibold">Flash Sale</h3>
             <p className="text-sm text-gray-500">Up to 70% OFF</p>
@@ -68,10 +68,10 @@ export default function HomePage() {
             <h3 className="font-semibold">New Arrivals</h3>
             <p className="text-sm text-gray-500">Latest products</p>
           </div>
-        </div>
+        </div> */}
       </section>
 
-      {/* 🛍️ PRODUCTS */}
+      {/*  PRODUCTS */}
       <section className="max-w-6xl mx-auto py-12 px-4">
         <h2 className="text-3xl font-bold mb-8 text-center">
           Popular Products

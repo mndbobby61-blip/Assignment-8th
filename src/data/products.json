@@ -7,7 +7,7 @@
         "rating": 4.7,
         "stock": 10,
         "description": "Stylish UV protection sunglasses perfect for summer outings.",
-        "image": "/assets/sunglasses.png",
+        "image": "/assets/Sunglasses.jpg",
         "category": "Accessories"
     },
     {
@@ -18,7 +18,7 @@
         "rating": 4.5,
         "stock": 20,
         "description": "Wide-brim hat for sunny days.",
-        "image": "/assets/beach-hat.png",
+        "image": "/assets/BeachHat.jpg",
         "category": "Accessories"
     },
     {
@@ -29,7 +29,7 @@
         "rating": 4.8,
         "stock": 15,
         "description": "Portable rechargeable mini fan.",
-        "image": "/assets/mini-fan.png",
+        "image": "/assets/MiniFan.jpg",
         "category": "Electronics"
     },
     {
@@ -40,7 +40,7 @@
         "rating": 4.6,
         "stock": 30,
         "description": "Keeps water cold for 12 hours.",
-        "image": "/assets/water-bottle.png",
+        "image": "/assets/WaterBottle.jpg",
         "category": "Lifestyle"
     },
     {
@@ -51,7 +51,7 @@
         "rating": 4.4,
         "stock": 25,
         "description": "Comfortable summer flip flops.",
-        "image": "/assets/flip-flops.png",
+        "image": "/assets/FlipFlops.jpg",
         "category": "Footwear"
     },
     {
@@ -62,7 +62,7 @@
         "rating": 4.9,
         "stock": 18,
         "description": "Protect your skin from harmful UV rays.",
-        "image": "/assets/sunscreen.png",
+        "image": "/assets/Sunscreen.jpg",
         "category": "Skincare"
     }
 ]

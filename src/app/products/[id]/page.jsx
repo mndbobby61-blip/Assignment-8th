@@ -1,3 +1,4 @@
+'use client';
 import products from "@/data/products.json";
 
 export default async function ProductDetails({ params }) {
@@ -25,7 +26,7 @@ export default async function ProductDetails({ params }) {
             <h1 className="text-3xl font-bold mt-6">{product.name}</h1>
             <p className="mt-4">{product.description}</p>
             <p className="mt-2">⭐ {product.rating}</p>
-            <p className="mt-2 font-bold">${product.price}</p>
+            <p className="mt-2 font-bold">${product.price.toFixed(2)}</p>
             <p className="mt-2">Stock: {product.stock}</p>
             <p className="mt-2">Brand: {product.brand}</p>
         </div>
