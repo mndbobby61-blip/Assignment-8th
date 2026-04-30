@@ -1,65 +1,152 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import products from "@/data/products.json";
+import Link from "next/link";
+import Image from "next/image";
+import "animate.css";
+
+export default function HomePage() {
+  const popularProducts = products.slice(0, 4);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div className="bg-gray-100">
+
+      {/* 🔥 HERO + SIDEBAR */}
+      <section className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4">
+
+        {/* 🧭 Sidebar */}
+        <div className="bg-white rounded-xl shadow p-4 space-y-3">
+          <h2 className="font-bold text-lg mb-2">Categories</h2>
+          {["Electronics", "Fashion", "Shoes", "Bags", "Watches"].map((cat) => (
+            <p
+              key={cat}
+              className="cursor-pointer hover:text-orange-500 transition"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              {cat}
+            </p>
+          ))}
+        </div>
+
+        {/* 🎯 Hero Banner */}
+        <div className="md:col-span-2 relative bg-gradient-to-r from-yellow-200 via-orange-100 to-yellow-300 rounded-xl py-16 overflow-hidden text-center">
+
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,165,0,0.3),transparent)] animate-pulse"></div>
+
+          <div className="relative z-10 px-4">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-orange-600 hover:scale-110 transition duration-500">
+              Summer Sale 50% OFF
+            </h1>
+
+            <p className="text-xl mt-3 font-semibold animate-bounce">
+              Hot Deals 🔥
+            </p>
+
+            <button className="mt-6 px-6 py-2 bg-orange-500 text-white rounded-full hover:bg-red-500 hover:scale-110 transition">
+              Shop Now
+            </button>
+
+            <div className="flex justify-center mt-6">
+              <Image
+                src="/assets/shopping-bag.png"
+                alt="shopping"
+                width={100}
+                height={100}
+                className="animate-bounce"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* 🎁 Promo Cards */}
+        <div className="space-y-4">
+          <div className="bg-white rounded-xl p-4 shadow hover:shadow-lg transition">
+            <h3 className="font-semibold">Flash Sale</h3>
+            <p className="text-sm text-gray-500">Up to 70% OFF</p>
+          </div>
+
+          <div className="bg-white rounded-xl p-4 shadow hover:shadow-lg transition">
+            <h3 className="font-semibold">New Arrivals</h3>
+            <p className="text-sm text-gray-500">Latest products</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 🛍️ PRODUCTS */}
+      <section className="max-w-6xl mx-auto py-12 px-4">
+        <h2 className="text-3xl font-bold mb-8 text-center">
+          Popular Products
+        </h2>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {popularProducts.map((product) => (
+            <div
+              key={product.id}
+              className="bg-white rounded-xl shadow p-4 
+              hover:shadow-xl hover:-translate-y-2 transition duration-300"
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              <div className="flex justify-center">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="h-40 object-contain hover:scale-110 transition"
+                />
+              </div>
+
+              <h3 className="text-lg font-semibold mt-3 text-center">
+                {product.name}
+              </h3>
+
+              <p className="text-yellow-500 text-center">
+                ⭐ {product.rating}
+              </p>
+
+              <p className="text-orange-500 font-bold text-center">
+                ${product.price}
+              </p>
+
+              <Link href={`/products/${product.id}`}>
+                <button className="mt-3 w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
+                  View Details
+                </button>
+              </Link>
+            </div>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* 🌞 Tips */}
+      <section className="bg-blue-50 py-12 px-6">
+        <h2 className="text-3xl font-bold text-center mb-6">
+          Summer Care Tips
+        </h2>
+
+        <ul className="max-w-4xl mx-auto space-y-3 text-lg">
+          <li>💧 Stay hydrated and drink plenty of water</li>
+          <li>🧴 Apply sunscreen before going outside</li>
+          <li>🥗 Eat fresh fruits and vegetables</li>
+          <li>🧢 Wear hats and sunglasses outdoors</li>
+        </ul>
+      </section>
+
+      {/* 🏷️ Brands */}
+      <section className="py-12 px-6">
+        <h2 className="text-3xl font-bold text-center mb-8">
+          Top Brands
+        </h2>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          {["SunShade", "CoolWave", "HydroMax", "SkinGuard"].map((brand) => (
+            <div
+              key={brand}
+              className="border p-6 rounded-xl shadow text-center 
+              hover:bg-orange-500 hover:text-white transition cursor-pointer"
+            >
+              {brand}
+            </div>
+          ))}
         </div>
-      </main>
+      </section>
+
     </div>
   );
 }

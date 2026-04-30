@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "name": "UV Protection Sunglasses",
+        "brand": "SunShade",
+        "price": 15,
+        "rating": 4.7,
+        "stock": 10,
+        "description": "Stylish UV protection sunglasses perfect for summer outings.",
+        "image": "/assets/sunglasses.png",
+        "category": "Accessories"
+    },
+    {
+        "id": 2,
+        "name": "Beach Hat",
+        "brand": "CoolWave",
+        "price": 12,
+        "rating": 4.5,
+        "stock": 20,
+        "description": "Wide-brim hat for sunny days.",
+        "image": "/assets/beach-hat.png",
+        "category": "Accessories"
+    },
+    {
+        "id": 3,
+        "name": "Mini Fan",
+        "brand": "BreezeGo",
+        "price": 18,
+        "rating": 4.8,
+        "stock": 15,
+        "description": "Portable rechargeable mini fan.",
+        "image": "/assets/mini-fan.png",
+        "category": "Electronics"
+    },
+    {
+        "id": 4,
+        "name": "Water Bottle",
+        "brand": "HydroMax",
+        "price": 10,
+        "rating": 4.6,
+        "stock": 30,
+        "description": "Keeps water cold for 12 hours.",
+        "image": "/assets/water-bottle.png",
+        "category": "Lifestyle"
+    },
+    {
+        "id": 5,
+        "name": "Flip Flops",
+        "brand": "StepEasy",
+        "price": 14,
+        "rating": 4.4,
+        "stock": 25,
+        "description": "Comfortable summer flip flops.",
+        "image": "/assets/flip-flops.png",
+        "category": "Footwear"
+    },
+    {
+        "id": 6,
+        "name": "Sunscreen SPF 50",
+        "brand": "SkinGuard",
+        "price": 20,
+        "rating": 4.9,
+        "stock": 18,
+        "description": "Protect your skin from harmful UV rays.",
+        "image": "/assets/sunscreen.png",
+        "category": "Skincare"
+    }
+]
