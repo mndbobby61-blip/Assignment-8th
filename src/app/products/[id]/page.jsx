@@ -1,18 +1,14 @@
-'use client';
 import products from "@/data/products.json";
 
 export default async function ProductDetails({ params }) {
     const { id } = await params;
-    const productId = Number(id);
 
-    const product = products.find((item) => item.id === productId);
+    const product = products.find(
+        (item) => item.id === parseInt(id)
+    );
 
     if (!product) {
-        return (
-            <h1 className="text-center mt-10 text-2xl">
-                Product not found
-            </h1>
-        );
+        return <h1>Product not found</h1>;
     }
 
     return (
@@ -20,15 +16,16 @@ export default async function ProductDetails({ params }) {
             <img
                 src={product.image}
                 alt={product.name}
-                className="h-64 mx-auto"
+                className="w-64 mx-auto"
             />
 
-            <h1 className="text-3xl font-bold mt-6">{product.name}</h1>
-            <p className="mt-4">{product.description}</p>
-            <p className="mt-2">⭐ {product.rating}</p>
-            <p className="mt-2 font-bold">${product.price.toFixed(2)}</p>
-            <p className="mt-2">Stock: {product.stock}</p>
+            <h1 className="text-4xl font-bold mt-5">{product.name}</h1>
+            <p className="mt-3">{product.description}</p>
             <p className="mt-2">Brand: {product.brand}</p>
+            <p>Price: ${product.price}</p>
+            <p>Rating: {product.rating}</p>
+            <p>Stock: {product.stock}</p>
+            <p>Category: {product.category}</p>
         </div>
     );
 }
