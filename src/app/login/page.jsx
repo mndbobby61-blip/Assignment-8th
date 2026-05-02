@@ -109,8 +109,7 @@ export default function Login() {
                 {/* GOOGLE LOGIN */}
                 <button
                     onClick={handleGoogleLogin}
-                    className="w-full flex items-center justify-center gap-2 border py-3 rounded-lg hover:bg-gray-50 transition font-medium"
-                >
+                    className="w-full flex items-center justify-center gap-2 border py-3 rounded-lg hover:bg-gray-50 transition font-medium">
                     <GrGoogle className="text-red-500" />
                     Continue with Google
                 </button>

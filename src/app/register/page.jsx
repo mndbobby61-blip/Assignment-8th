@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { authClient } from "@/lib/auth-client";
+import { GrGoogle } from "react-icons/gr";
 
 export default function Register() {
     const router = useRouter();
@@ -15,7 +16,7 @@ export default function Register() {
 
         const name = form.get("name");
         const email = form.get("email");
-        const image = form.get("image") ||  "https://i.ibb.co/4pDNDk1/default-avatar.png";
+        const image = form.get("image") || "https://i.ibb.co/4pDNDk1/default-avatar.png";
         const password = form.get("password");
 
         const res = await authClient.signUp.email({
@@ -32,7 +33,16 @@ export default function Register() {
         }
 
         router.push("/login");
+
     };
+
+        const handleGoogleLogin = async () => {
+            await authClient.signIn.social({
+                provider: "google",
+                callbackURL: "/",
+            });
+        };
+
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-100 via-white to-orange-200 px-4">
@@ -108,6 +118,13 @@ export default function Register() {
 
                     </div>
                 </form>
+
+                <button
+                    onClick={handleGoogleLogin}
+                    className="w-full mt-5 flex items-center justify-center gap-2 border py-3 rounded-lg hover:bg-gray-50 transition font-medium">
+                    <GrGoogle className="text-red-500" />
+                    Continue with Google
+                </button>
 
                 {/* LINK */}
                 <p className="text-center mt-5 text-sm text-gray-500">
