@@ -3,8 +3,7 @@ import React from "react";
 import Image from "next/image";
 
 const Navbar = () => {
-    const isLoggedIn = false; // পরে auth হলে এটা dynamic হবে
-
+    const isLoggedIn = false; 
     return (
         <nav className="flex justify-between items-center p-4 bg-orange-500 text-white">
             {/* Logo */}
