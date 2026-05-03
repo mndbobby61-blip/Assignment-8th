@@ -15,11 +15,11 @@ export default function UpdateProfile() {
     const form = new FormData(e.currentTarget);
 
     const name = form.get("name");
-    const image = form.get("image"); // 🔥 direct link input
+    const image = form.get("image"); 
 
     await authClient.updateUser({
       name,
-      image, // 🔥 save URL directly
+      image, 
     });
 
     router.push("/my-profile");
@@ -35,7 +35,7 @@ export default function UpdateProfile() {
           Update Profile
         </h1>
 
-        {/* 🔥 Preview */}
+        {/*  Preview */}
         <div className="flex flex-col items-center mb-6">
 
           <img
@@ -47,7 +47,7 @@ export default function UpdateProfile() {
 
         </div>
 
-        {/* 🔥 FORM */}
+        {/*  FORM */}
         <form onSubmit={handleUpdate} className="flex flex-col gap-4">
 
           {/* Name */}
@@ -58,7 +58,7 @@ export default function UpdateProfile() {
             className="border p-3 rounded-xl"
           />
 
-          {/* 🔥 IMAGE DIRECT LINK INPUT */}
+          {/*  IMAGE DIRECT LINK INPUT */}
           <input
             name="image"
             defaultValue={user?.image || ""}
