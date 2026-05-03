@@ -3,6 +3,9 @@ import "server-only";
 import { betterAuth } from "better-auth"; // THIS IS REQUIRED
 import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
+import dns from "node:dns/promises";
+
+dns.setServers(["1.1.1.1","8.8.8.8"]);
 
 if (!process.env.MONGODB_URI) {
     throw new Error("MONGODB_URI is missing in .env.local");
